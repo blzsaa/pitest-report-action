@@ -1,4 +1,5 @@
 import {MutationStatus, Report} from "./report";
+import * as core from "@actions/core";
 
 export type AnnotationType = "ALL" | MutationStatus;
 
@@ -32,7 +33,9 @@ export function createAnnotations(
     
     let annotations: Annotation[] = [];
 
-    console.log(reports)
+
+    core.info("reports" + reports)
+
     reports.map(report =>
         report.mutations
             ?.filter(m => annotationType === "ALL" || m.attr_status === annotationType)
