@@ -30,8 +30,10 @@ export function createAnnotations(
         maxAnnotations: number,
         annotationType: AnnotationType): Annotation[] {
     
-    let annotations: Annotation[] = []; 
-    reports.map(report => 
+    let annotations: Annotation[] = [];
+
+    console.log(reports)
+    reports.map(report =>
         report.mutations
             ?.filter(m => annotationType === "ALL" || m.attr_status === annotationType)
             .slice(0, Math.max(maxAnnotations - annotations.length, 0))
