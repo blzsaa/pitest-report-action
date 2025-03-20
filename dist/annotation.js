@@ -10,6 +10,7 @@ exports.createAnnotations = void 0;
  */
 function createAnnotations(reports, maxAnnotations, annotationType) {
     let annotations = [];
+    console.log(reports);
     reports.map(report => {
         var _a;
         return (_a = report.mutations) === null || _a === void 0 ? void 0 : _a.filter(m => annotationType === "ALL" || m.attr_status === annotationType).slice(0, Math.max(maxAnnotations - annotations.length, 0)).forEach(m => {
