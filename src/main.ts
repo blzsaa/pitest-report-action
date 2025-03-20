@@ -47,6 +47,7 @@ async function run(): Promise<void> {
         if(output === "checks"){
             core.info("Creating checks run");
             core.info("Creating checks run");
+            core.info("Creating checks run");
             const checks = await octokit.rest.checks.create({
                 owner: github.context.repo.owner,
                 repo: github.context.repo.repo,

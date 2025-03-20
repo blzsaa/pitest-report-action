@@ -75,6 +75,7 @@ function run() {
             if (output === "checks") {
                 core.info("Creating checks run");
                 core.info("Creating checks run");
+                core.info("Creating checks run");
                 const checks = yield octokit.rest.checks.create({
                     owner: github.context.repo.owner,
                     repo: github.context.repo.repo,
